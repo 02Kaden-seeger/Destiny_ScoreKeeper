@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/relativeone"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
         android:layout_alignParentTop="true">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Round:"
-            android:textSize="50sp"
-            android:paddingLeft="100sp"/>
+            android:textSize="50sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/roundnum"
             android:text="1"
-            android:textSize="50sp"
-            android:paddingLeft="265dp"/>
-    </RelativeLayout>
+            android:textSize="50sp" />
+    </LinearLayout>
 
 
     <RelativeLayout
@@ -209,10 +209,9 @@
                 android:layout_height="wrap_content"
                 android:text="4"
                 android:textSize="35sp"
-                android:id="@+id/redLives"
+                android:id="@+id/redLives"/>
         </LinearLayout>
-
-    </>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -232,11 +231,23 @@
                 android:text="Blue"/>
 
         </LinearLayout>
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Player One:"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Player One: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/scorebluepone"
+                android:text="0"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -245,22 +256,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kill"
+                android:onClick="killbluepone"
                 android:id="@+id/bluePlayeronekill"
                 android:textSize="15sp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Died"
+                android:onClick="diedbluepone"
                 android:id="@+id/bluePlayeronedied"
                 android:textSize="15sp"/>
 
 
         </LinearLayout>
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Player Two:"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Player Two:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/scoreblueptwo"
+                android:text="0"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -269,21 +294,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kill"
+                android:onClick="killblueptwo"
                 android:id="@+id/bluePlayertwokill"
                 android:textSize="15sp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Died"
+                android:onClick="diedblueptwo"
                 android:id="@+id/bluePlayertwodied"
                 android:textSize="15sp"/>
 
         </LinearLayout>
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Player Three:"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Player Three:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/scorebluepthree"
+                android:text="0"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -292,12 +331,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kill"
+                android:onClick="killbluepthree"
                 android:id="@+id/bluePlayerthreekill"
                 android:textSize="15sp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Died"
+                android:onClick="diedbluepthree"
                 android:id="@+id/bluePlayerthreedied"
                 android:textSize="15sp"/>
 
@@ -317,7 +358,7 @@
                 android:layout_height="wrap_content"
                 android:text="4"
                 android:textSize="35sp"
-                android:id="@+id/blueLives"
+                android:id="@+id/blueLives"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -331,14 +372,16 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="resetround"
             android:id="@+id/resetround"
-            android:onClick="resetrouncclick"
+
             android:text="Reset Round"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="resetmatch"
             android:id="@+id/resetmatch"
-            android:onClick="resetmatchclick"
+
             android:text="Reset Match"/>
 
     </LinearLayout>
