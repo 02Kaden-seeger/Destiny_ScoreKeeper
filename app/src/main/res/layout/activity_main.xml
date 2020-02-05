@@ -24,8 +24,6 @@
             android:text="1"
             android:textSize="50sp" />
     </LinearLayout>
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -211,13 +209,74 @@
                 android:textSize="35sp"
                 android:id="@+id/redLives"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+
+                android:id="@+id/blueteamscore"
+                android:text="Red Teams Score:"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="Player One:  "/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:id="@+id/redponeKD"
+                    android:text="0"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Player Two:  "
+                    android:textSize="25sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:id="@+id/redptwoKD"
+                    android:text="0"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Player Three: "
+                    android:textSize="25sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:id="@+id/redpthreeKD"
+                    android:text="0"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Linear"
         android:orientation="vertical"
-        android:paddingLeft="50dp"
+        android:paddingLeft="35dp"
         android:layout_toRightOf="@+id/Playerone">
         <LinearLayout
             android:layout_width="match_parent"
@@ -360,7 +419,86 @@
                 android:textSize="35sp"
                 android:id="@+id/blueLives"/>
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/redteamscore"
+            android:text="Red Teams Score:"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="Player One: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:id="@+id/blueponeKD"
+                android:text="0"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player Two: "
+                android:textSize="25sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:id="@+id/blueptwoKD"
+                android:text="0"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="Player Three:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/bluepthreeKD"
+                android:textSize="25sp"/>
+        </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="25dp"
+        android:layout_below="@id/Playerone">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:id="@+id/button"
+            android:onClick="seescores"
+            android:text="SeeScores"/>
+    </LinearLayout>
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -385,5 +523,6 @@
             android:text="Reset Match"/>
 
     </LinearLayout>
+
 
 </RelativeLayout>

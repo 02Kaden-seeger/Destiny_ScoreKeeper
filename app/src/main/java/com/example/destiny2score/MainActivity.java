@@ -1,14 +1,30 @@
 package com.example.destiny2score;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+    private Button button;
     int scoreredpone = 0;
+    double KDredpone = 6.3;
+    int deathredpone = 0;
+    int deathredptwo = 0;
+    double KDredptwo = 0;
+    double KDbluepone = 0;
+    double KDblueptwo = 0;
+    double KDbluepthree = 0;
+    int deathredpthree = 0;
+    int deathbluepone = 0;
+    int deathblueptwo = 0;
+    int deathbluepthree = 0;
     int scoreredptwo = 0;
     int scoreredpthree = 0;
+    double KDredpthree = 0;
     int scorebluepone = 0;
     int scoreblueptwo = 0;
     int scorebluepthree = 0;
@@ -21,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity2();
+            }
+        });
+    }public void openActivity2(){
+        Intent intent = new Intent(this, Activity2.class);
+        startActivity(intent);
     }
     // Below is the red side of scoring
     public void killredpone(View view){
@@ -28,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         displayredpone(scoreredpone);
     }public void diedredpone(View view){
         redlives--;
+        deathredpone++;
         if(redlives > 0){
             displayredlives(redlives);
         }else{
@@ -45,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         displayredptwo(scoreredptwo);
     }public void diedredptwo(View view){
         redlives--;
+        deathredptwo++;
         if(redlives > 0){
             displayredlives(redlives);
         }else{
@@ -62,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         displayredthree(scoreredpthree);
     }public void diedredpthree(View view){
         redlives--;
+        deathredpthree++;
         if(redlives > 0){
             displayredlives(redlives);
         }else{
@@ -82,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         displaybluepone(scorebluepone);
     }public void diedbluepone(View view){
         bluelives--;
+        deathbluepone++;
         if(bluelives > 0){
             displaybluelives(bluelives);
         }else{
@@ -99,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         displaybluetwo(scoreblueptwo);
     }public void diedblueptwo(View view){
         bluelives--;
+        deathblueptwo++;
         if(bluelives > 0){
             displaybluelives(bluelives);
         }else{
@@ -116,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
         displaybluethree(scorebluepthree);
     }public void diedbluepthree(View view){
         bluelives--;
+        deathbluepthree++;
         if(bluelives > 0){
             displaybluelives(bluelives);
         }else{
@@ -170,9 +202,9 @@ public class MainActivity extends AppCompatActivity {
         displaybluescore(bluescore);
         roundnum = 1;
         displayround(roundnum);
+    }public void seescores(View view){
+        displayreponeKD(KDredpone);
     }
-
-
 
 
     private void displayredpone(int number){
@@ -209,5 +241,8 @@ public class MainActivity extends AppCompatActivity {
     }private void displaybluelives(int number){
         TextView bluelives = findViewById(R.id.blueLives);
         bluelives.setText("" + number);
+    }private void displayreponeKD(double number){
+        TextView redponeKD = findViewById(R.id.redponeKD);
+        redponeKD.setText("" + number);
     }
 }
