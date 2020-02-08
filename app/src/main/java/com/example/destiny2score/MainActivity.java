@@ -1,17 +1,16 @@
 package com.example.destiny2score;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.os.Bundle;
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
     int scoreredpone = 0;
-    double KDredpone = 6.3;
+    double KDredpone = 0;
     int deathredpone = 0;
     int deathredptwo = 0;
     double KDredptwo = 0;
@@ -203,7 +202,25 @@ public class MainActivity extends AppCompatActivity {
         roundnum = 1;
         displayround(roundnum);
     }public void seescores(View view){
-        displayreponeKD(KDredpone);
+        if(scoreredpone > 0 || deathredpone > 0){
+            KDredpone = scoreredpone / deathredpone;
+            displayreponeKD(KDredpone);
+        }else{
+            displayreponeKD(scoreredpone);
+        }
+        if(scoreredptwo > 0 || deathredptwo > 0){
+            KDredptwo = scoreredptwo / scoreredptwo;
+            displayredptwoKD(KDredptwo);
+        }else{
+            displayredptwoKD(scoreredptwo);
+        }
+        if(scoreredpthree > 0 || deathredpthree > 0){
+            KDredpthree = scoreredpthree / deathredpthree;
+            displayredpthreeKD(KDredpthree);
+        }else{
+            displayredpthreeKD(scoreredpthree);
+        }
+
     }
 
 
@@ -216,8 +233,7 @@ public class MainActivity extends AppCompatActivity {
     }private void displayredthree(int number){
         TextView scoreredpthree = findViewById(R.id.scoreredpthree);
         scoreredpthree.setText("" + number);
-    }
-    private void displaybluepone(int number){
+    }private void displaybluepone(int number){
         TextView scorebluepone = findViewById(R.id.scorebluepone);
         scorebluepone.setText("" + number);
     }private void displaybluetwo(int number){
@@ -244,5 +260,10 @@ public class MainActivity extends AppCompatActivity {
     }private void displayreponeKD(double number){
         TextView redponeKD = findViewById(R.id.redponeKD);
         redponeKD.setText("" + number);
-    }
-}
+    }private void displayredptwoKD(double number){
+        TextView redptwoKD = findViewById(R.id.redptwoKD);
+        redptwoKD.setText("" + number);
+    }private void displayredpthreeKD(double number){
+        TextView redpthreeKD = findViewById(R.id.redpthreeKD);
+        redpthreeKD.setText("" + number);
+    }}
